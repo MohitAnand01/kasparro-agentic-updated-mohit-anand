@@ -1,0 +1,16 @@
+You are a strict JSON-only parser.
+
+Given the RAW_PRODUCT_JSON below, extract only these keys and output a single JSON object with exactly these keys:
+- name (string)
+- concentration (string)
+- skin_types (array of strings)
+- key_ingredients (array of strings)
+- benefits (array of strings)
+- how_to_use (string)
+- side_effects (string)
+- price (string)
+
+Output ONLY valid JSON (one JSON object) with exactly the keys above. No extra text or explanation.
+
+RAW_PRODUCT_JSON:
+{product_json}

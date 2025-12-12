@@ -1,0 +1,19 @@
+{
+  "base_product_summary": {
+    "name": "GlowBoost Vitamin C Serum",
+    "price": "₹699",
+    "key_ingredients": [
+      "Vitamin C",
+      "Hyaluronic Acid"
+    ]
+  },
+  "competitor": {
+    "name": "Fictional B (mock)",
+    "price": "₹1,199",
+    "key_ingredients": [
+      "Vitamin C",
+      "Niacinamide"
+    ]
+  },
+  "comparison": "Simple mock comparison between GlowBoost Vitamin C Serum and Fictional B (mock)."
+}

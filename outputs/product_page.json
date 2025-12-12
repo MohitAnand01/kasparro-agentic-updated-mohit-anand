@@ -1,0 +1,98 @@
+{
+  "title": "GlowBoost Vitamin C Serum",
+  "name": "GlowBoost Vitamin C Serum",
+  "concentration": "10% Vitamin C",
+  "skin_types": [
+    "Oily",
+    "Combination"
+  ],
+  "key_ingredients": [
+    "Vitamin C",
+    "Hyaluronic Acid"
+  ],
+  "benefits_summary": [
+    "Brightening",
+    "Fades dark spots"
+  ],
+  "usage_instructions": "Apply 2–3 drops in the morning before sunscreen",
+  "safety_information": "Mild tingling for sensitive skin",
+  "price": "₹699",
+  "faqs": [
+    {
+      "question": "What is GlowBoost Vitamin C Serum used for?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Informational"
+    },
+    {
+      "question": "What are the key ingredients?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Informational"
+    },
+    {
+      "question": "How often should I apply this serum?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Usage"
+    },
+    {
+      "question": "Can this product cause irritation on sensitive skin?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Safety"
+    },
+    {
+      "question": "What is the price and package size?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Purchase"
+    },
+    {
+      "question": "How does this compare to other vitamin C serums?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Comparison"
+    },
+    {
+      "question": "Should I use sunscreen after applying?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Usage"
+    },
+    {
+      "question": "Is this suitable for oily skin?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Informational"
+    },
+    {
+      "question": "Can I use this with retinol?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Safety"
+    },
+    {
+      "question": "How long before I see results?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Informational"
+    },
+    {
+      "question": "Does it contain fragrance or alcohol?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Safety"
+    },
+    {
+      "question": "Is this product vegan/cruelty-free?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Informational"
+    },
+    {
+      "question": "How should I store the product?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Usage"
+    },
+    {
+      "question": "What packaging is used?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Purchase"
+    },
+    {
+      "question": "Any known contraindications?",
+      "answer": "Mock answer derived from product: GlowBoost Vitamin C Serum.",
+      "category": "Safety"
+    }
+  ],
+  "faqs_count": 15
+}

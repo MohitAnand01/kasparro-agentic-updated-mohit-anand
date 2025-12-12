@@ -1,0 +1,16 @@
+You are a JSON page assembler.
+
+Input: CONTEXT_JSON which contains:
+- product (the parsed product object)
+- questions (list of question objects)
+- faqs (list of FAQ objects)
+
+Produce and return ONLY one JSON object with keys:
+- product_page.json : an object summarizing the product (title, name, concentration, skin_types, key_ingredients, benefits_summary, usage_instructions, safety_information, price)
+- faq.json : an object containing "product_name" and "faqs" (the list of question/answer pairs)
+- comparison_page.json : an object that compares the base product with one fictional competitor. The fictional competitor may be minimal but plausible; keep comparisons based only on fields present in the product.
+
+Do NOT include any extra text — return exactly the JSON object described.
+
+CONTEXT_JSON:
+{context}

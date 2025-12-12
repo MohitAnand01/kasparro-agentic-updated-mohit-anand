@@ -1,0 +1,12 @@
+{
+  "title": "{{ product.title }}",
+  "name": "{{ product.name }}",
+  "concentration": "{{ product.concentration }}",
+  "skin_types": {{ product.skin_types | tojson }},
+  "key_ingredients": {{ product.key_ingredients | tojson }},
+  "benefits_summary": {{ product.benefits_summary | tojson }},
+  "usage_instructions": "{{ product.usage_instructions }}",
+  "safety_information": "{{ product.safety_information }}",
+  "price": "{{ product.price }}",
+  "faqs": {{ faqs | tojson }}
+}

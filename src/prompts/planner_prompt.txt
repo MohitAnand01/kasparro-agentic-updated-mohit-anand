@@ -1,0 +1,18 @@
+You are a content planner converting user questions into FAQ Q&A pairs.
+
+Input:
+- PRODUCT_JSON (the product information)
+- QUESTIONS_JSON (a list of questions generated earlier)
+
+For each question, produce an object with:
+- question (string)
+- answer (string) — concise (1-3 sentences) and derived only from PRODUCT_JSON
+- category (same category as the question)
+
+Return ONLY a JSON object with key "faqs" whose value is the list of FAQ objects.
+
+PRODUCT_JSON:
+{product}
+
+QUESTIONS_JSON:
+{questions}
