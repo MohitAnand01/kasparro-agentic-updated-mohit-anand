@@ -1,118 +1,151 @@
-📘 Multi-Agent Content Generation System (LangChain + LangGraph)
-Applied AI Engineer Challenge — Final Submission
+📘 Multi-Agent Content Generation System
+LangChain + LangGraph | Applied AI Engineer Challenge
+
 Author: Mohit Anand
-1. Problem Statement
 
-Design and implement a modular agentic automation system that transforms a small product dataset into:
+🚀 1. Problem Statement
 
-FAQ Page (15+ Q&As)
+Develop a modular agentic automation system capable of transforming a small product dataset into:
 
-Product Description Page
+🟦 Product Description Page
 
-Comparison Page
+🟩 FAQ Page (15+ structured questions & answers)
 
-Normalized JSON Outputs
+🟥 Comparison Page
+
+🟨 Normalized JSON Outputs
+
+✅ System Requirements
 
 The system must:
 
-Use multiple independent agents
+Use multiple, independently functioning agents
 
-Demonstrate an orchestration flow / automation graph
+Demonstrate a clear orchestration / automation flow
 
-Contain reusable logic blocks
+Utilize reusable logic blocks
 
 Use a custom template engine
 
-Output clean JSON files
+Produce machine-readable JSON outputs
 
-Use only the provided dataset, with no external facts or internet lookup
+Use only the provided dataset (no external facts or internet lookup)
 
-The goal is to evaluate:
+🎯 Evaluation Focus
 
-System design
+Architecture & system design
 
-Agent architecture
+Multi-agent orchestration
 
-Orchestration
+Modularity & reusability
 
-Reusability and reliability
+Structured deterministic output
 
-2. Solution Overview
+🧠 2. Solution Overview
 
-The solution is built as a four-agent modular system, orchestrated by a LangChain-based workflow.
-Each agent performs one atomic responsibility, ensuring deterministic and clean outputs.
+The solution is a four-agent deterministic architecture orchestrated via LangChain.
 
-🌟 The Four Agents
+Each agent performs a single responsibility, enabling:
+✔ Maintainability
+✔ Determinism
+✔ Testability
+✔ Extensibility
 
-Parser Agent
-Normalizes raw JSON → Validated structured schema.
+🔧 2.1 The Four Core Agents
+1️⃣ Parser Agent
 
-Question Generation Agent
-Produces 15+ categorized FAQs using controlled prompt logic.
+Validates raw JSON
 
-FAQ Answering Agent
-Answers questions strictly using product facts (no hallucinations).
+Ensures required fields exist
 
-Assembler Agent
-Uses templates + logic blocks to build:
+Converts dataset into a strict normalized schema
+
+Initializes PageContext shared across agents
+
+2️⃣ Question Generation Agent
+
+Produces 15+ categorized FAQs
+
+Uses prompt logic instead of AI creativity
+
+Categories include:
+
+Informational
+
+Usage
+
+Safety
+
+Purchase
+
+Comparison
+
+3️⃣ FAQ Answering Agent
+
+Answers each FAQ using only the provided product facts
+
+Zero hallucination
+
+Output schema:
+
+{
+  "question": "...",
+  "answer": "...",
+  "category": "..."
+}
+
+4️⃣ Page Assembler Agent
+
+Uses templates + logic rules to generate:
 
 Product Page JSON
 
-FAQ Page JSON
+FAQ JSON
 
 Comparison Page JSON
 
-🔧 Supporting Modules
+Enforces strict schemas
 
-Template Engine (Jinja2)
+Powered by Jinja2 template engine
 
-Reusable Logic Blocks
-
-LangChain Tooling
-
-Writer Tool for File Output
-
-3. Scopes & Assumptions
+📦 3. Scope & Assumptions
 ✔️ In Scope
 
-Parsing and validating the GlowBoost dataset
+Parsing & validating provided dataset
 
-Structured question generation
+FAQ generation (≥ 15)
 
-Fact-based FAQ construction
+Fact-based FAQ answering
 
-Template-driven page creation
+Template-driven page assembly
 
-JSON-only output
+Strict JSON output
 
-Multi-agent workflow coordination
+Offline execution
 
 ❌ Out of Scope
 
-External APIs / online data
+Internet access / external data sources
 
-GPT or creative content writing
+Creative rewriting or LLM hallucinations
 
-UI, frontend, or web server
+UI / frontend
 
-Dataset modification
+Dataset expansion
 
-Assumptions
+📌 Assumptions
 
-Input always follows expected schema
+Dataset always follows expected schema
 
-System must run without internet
+System should remain modular for future upgrades
 
-Architecture should remain extensible for future model integrations
+No external facts may be introduced
 
-4. System Design
+🏗️ 4. System Design
 
-The system follows a 4-stage pipeline, where each stage produces intermediate structured data stored in a shared PageContext.
+The system follows a four-stage agentic pipeline, each transforming the data before passing it forward. Outputs are stored in an evolving shared PageContext.
 
-4.1 High-Level System Architecture Diagram
-
-This diagram shows how modules, agents, tools, schema validators, and templates integrate:
-
+🖥️ 4.1 High-Level System Architecture
 flowchart LR
 
     subgraph INPUT[Input Layer]
@@ -120,15 +153,15 @@ flowchart LR
     end
 
     subgraph AGENTS[Agent Layer]
-        P[Parser Agent\nNormalize + Validate Schema]
-        QG[Question Generation Agent\n15+ Categorized Questions]
-        ANS[FAQ Answering Agent\nFact-Based Answers]
-        ASM[Assembler Agent\nTemplates + Logic Blocks]
+        P[Parser Agent<br/>Normalize + Validate Schema]
+        QG[Question Generation Agent<br/>15+ Categorized Questions]
+        ANS[FAQ Answering Agent<br/>Fact-Based Answers]
+        ASM[Assembler Agent<br/>Templates + Logic Blocks]
     end
 
     subgraph LOGIC[Supporting Logic]
-        LB[Reusable Logic Blocks\nUsage Rules · Safety · Benefits]
-        TMP[Template Engine\n(Jinja2)]
+        LB[Reusable Logic Blocks<br/>Usage · Safety · Benefits]
+        TMP[Template Engine (Jinja2)]
         VAL[Schema Validation]
     end
 
@@ -147,22 +180,19 @@ flowchart LR
     ASM --> OP2
     ASM --> OP3
 
-4.2 Agent Workflow Diagram
-
-This diagram visualizes the core agentic content-generation pipeline:
-
+🔄 4.2 Agent Workflow Pipeline
 flowchart TD
 
     A[Raw Product JSON] --> B[Parser Agent<br/>Normalize & Validate Schema]
     B --> C[Question Generation Agent<br/>Generate 15+ Categorized FAQs]
-    C --> D[FAQ Answering Agent<br/>Answer FAQs Using Product Facts Only]
+    C --> D[FAQ Answering Agent<br/>Answer Using Product Facts Only]
     D --> E[Assembler Agent<br/>Build Product · FAQ · Comparison Pages]
 
     E --> F1[product_page.json]
     E --> F2[faq.json]
     E --> F3[comparison_page.json]
 
-5. Folder Structure
+📁 5. Folder Structure (GitHub-Ready)
 src/
  ├── agents/
  │    ├── langchain_agent_system.py
@@ -187,53 +217,78 @@ outputs/
  ├── faq.json
  └── comparison_page.json
 
-6. Execution Flow
+⚙️ 6. Execution Flow
+Step 1 — Load Input JSON
 
-Load Product JSON
+Loads product_input.json.
 
-Parser Agent normalizes and validates JSON
+Step 2 — Parser Agent
 
-QGen Agent produces 15+ categorized FAQs
+Validates → Normalizes → Creates internal schema.
 
-Answer Agent answers FAQs using product facts only
+Step 3 — Question Generation Agent
 
-Assembler Agent builds structured pages via templates
+Produces 15+ structured questions.
 
-Writer Tool outputs final JSON files
+Step 4 — FAQ Answering Agent
 
-7. Tech Stack
+Answers questions using only product data.
+
+Step 5 — Assembler Agent
+
+Uses templates + logic blocks to create output pages.
+
+Step 6 — File Writer Tool
+
+Exports all three pages as JSON.
+
+🧰 7. Tech Stack
 Component	Technology
 Agent Framework	LangChain
 Optional Orchestration	LangGraph
-LLM Backend	HuggingFace Local Models
-Prompts	LangChain PromptTemplate
+LLM Backend	HuggingFace (flan-t5-small, distilgpt2)
+Prompt Engine	LangChain PromptTemplate
 Template Engine	Jinja2
 Output Format	JSON
 Language	Python 3.10+
-8. Why This Meets All Challenge Requirements
+🏆 8. Why This Solution Meets All Requirements
 
-✔ Multiple agents, each with clear responsibilities
-✔ Controlled orchestration with LangChain
+✔ Multi-agent architecture
+✔ Framework-driven agent orchestration
 ✔ Reusable logic blocks
-✔ Custom templating engine
-✔ Clean, deterministic JSON output
-✔ Works fully offline
-✔ Zero external knowledge
-✔ Production-grade modularity
+✔ Custom Jinja2 template engine
+✔ Deterministic output (Mock or Local LLM mode)
+✔ Clean JSON schema enforcement
+✔ Offline-friendly
+✔ Maintainable folder structure
+✔ Zero hallucinations (facts only from product JSON)
 
-This project cleanly demonstrates professional-level agentic system design.
+🎯 9. Conclusion
 
-9. Conclusion
+This project demonstrates a production-ready agentic automation pipeline powered by LangChain.
+Through strict schema enforcement, modular agent design, and template-driven output generation, the system reliably produces:
 
-This system transforms raw product data into structured, machine-ready content through a robust, four-agent pipeline.
-Using LangChain’s agent framework, reusable logic blocks, and a template-driven architecture, the system delivers:
+Product Description Page
 
-Product Page
-
-FAQ Page
+FAQ Page (15+ items)
 
 Comparison Page
 
-Clean, validated JSON outputs
+Structured JSON outputs
 
-It fully satisfies the Applied AI Engineer Challenge requirements with a scalable, maintainable, and production-ready architecture.
+The architecture is:
+
+Scalable
+
+Maintainable
+
+Deterministic
+
+Fully challenge compliant
+
+If you'd like:
+✅ A PDF-ready version
+✅ A GitHub Pages documentation version
+✅ A compressed 1-page executive summary
+
+Just tell me!
